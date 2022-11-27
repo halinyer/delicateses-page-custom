@@ -1,0 +1,10 @@
+
+
+ul {
+    display: flex;
+    border: 1px solid black;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    border-radius: 15px;
+}
