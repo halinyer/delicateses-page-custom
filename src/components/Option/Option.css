@@ -5,12 +5,13 @@ li {
     position: relative;
     list-style: none;
     cursor: pointer;
+    
 }
 
-
 li img {
-   
-    width: 400px;
+    background-color: #F2F3F4;
+    width: 200px;
+    border-radius: 20px;
 }
 
 .option-info {

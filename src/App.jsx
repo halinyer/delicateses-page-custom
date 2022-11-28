@@ -46,7 +46,7 @@ function App() {
       <ListOption>
         {
           vinos.map(({ vino, img }) => (
-            <Option key={vino} img={img} />
+            <Option key={vino} img={img} setOpt={e => setOpt({caja: 0, vino: vino})}/>
           ))
         }
       </ListOption>
