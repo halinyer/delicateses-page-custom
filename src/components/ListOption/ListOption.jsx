@@ -1,11 +1,13 @@
 import React from 'react'
 import "./ListOption.css"
 
-export const ListOption = ({children}) => {
+export const ListOption = ({children,nameArticle}) => {
   return (
-    <ul>
-      
-       {children}
-    </ul>
+    <section>
+      <h2>Seleccione un {nameArticle}</h2>
+      <ul>
+        {children}
+      </ul>
+    </section>
   )
 }

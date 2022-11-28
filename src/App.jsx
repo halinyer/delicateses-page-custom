@@ -43,7 +43,7 @@ function App() {
       </ViewArreglo>
 
 
-      <ListOption>
+      <ListOption nameArticle="Vinos">
         {
           vinos.map(({ vino, img }) => (
             <Option key={vino} img={img} setOpt={e => setOpt({caja: 0, vino: vino})}/>
