@@ -1,6 +1,61 @@
-.viewArreglo {
+
+ div {
+  
+    position: relative;
+ }
+
+.btn-opt {
+    position: absolute;
+    z-index: 1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 55px;
+    gap: 5px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 800;
+    
+}
+
+
+.btn-opt div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn-caja {
    
+    right: calc(100% / 2 - 300px );
+    bottom: calc(581px / 2);
+}
+
+.btn-vino {
+    left: calc(100% / 2 - 300px );
+    top: 150px;
+}
+
+.viewArreglo {
     display: flex;
     justify-content: center;
     text-align: center;
 }
+
+
+
+.btn-opt:hover div path {
+    fill: #2874E9  ;
+}
+
+
+.btn-opt:focus div path {
+    fill: #2874E9  ;
+}
+
+

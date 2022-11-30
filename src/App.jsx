@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import selectBotella from '../src/assets/Photos-001/selectBotella.png'
 import './App.css'
 import { arreglos } from './components/arreglos'
+import { caja } from './components/cajasArray'
 import { ListOption } from './components/ListOption/ListOption'
 import Option from './components/Option/Option'
 import { ViewArreglo } from './components/ViewArreglo/ViewArreglo'
@@ -14,12 +15,28 @@ function App() {
      caja: 0,
    })
 
+   const [{nameArticle,articles}, setArticle] = useState(vinos)
+
    const [image, setImage] = useState({img:"" })
 
    const updateImage = () => {
-    const findElement = arreglos.find(({img, ...options}) => options.caja == opt.caja && options.vino == opt.vino)
+    const findElement = arreglos.article.find(({img, ...options}) => options.caja == opt.caja && options.vino == opt.vino)
     setImage(findElement)
     console.log(image)
+   }
+
+   const renderArticle = () => {
+    switch (nameArticle) {
+      case "vino":
+        return articles.map(({ n, img }) => (
+          <Option key={n} img={img} setOpt={e => setOpt( {caja: opt.caja, vino: n})}/>
+        ))
+      case "caja":
+        return articles.map(({ n, img }) => (
+          <Option key={n} img={img} setOpt={e => setOpt({caja: n, vino: opt.vino})}/>
+        ))
+
+    }
    }
 
    useEffect(() => {
@@ -29,7 +46,10 @@ function App() {
 
   return (
     <div className="App">
-      <ViewArreglo>
+      <ViewArreglo
+        articleCaja={() => setArticle(caja)}
+        articleVino={() => setArticle(vinos)}
+      >
         {
           image ? (
             <img src={image.img} alt="" />
@@ -43,12 +63,9 @@ function App() {
       </ViewArreglo>
 
 
-      <ListOption nameArticle="Vinos">
-        {
-          vinos.map(({ vino, img }) => (
-            <Option key={vino} img={img} setOpt={e => setOpt({caja: 0, vino: vino})}/>
-          ))
-        }
+
+      <ListOption nameArticle={nameArticle}>
+        {renderArticle()}
       </ListOption>
     </div>
   )
